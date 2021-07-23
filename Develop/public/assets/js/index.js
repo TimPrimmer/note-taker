@@ -4,7 +4,11 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === '/notes') {
+let temppath = "/C:/Users/timpr/Desktop/UTBOOTCAMP/note-taker/Develop/public/notes.html";
+let realpath = "/notes";
+
+// need to update
+if (window.location.pathname === temppath) {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -25,8 +29,9 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
+
 const getNotes = () =>
-  fetch('/api/notes', {
+  fetch('http://localhost:3001/api/notes', { // need to update
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -119,7 +124,9 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
-  if (window.location.pathname === '/notes') {
+  
+  // need to update
+  if (window.location.pathname === temppath) {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
 
@@ -161,11 +168,11 @@ const renderNoteList = async (notes) => {
   jsonNotes.forEach((note) => {
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
-
     noteListItems.push(li);
   });
 
-  if (window.location.pathname === '/notes') {
+  // need to update
+  if (window.location.pathname === temppath) {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
@@ -173,7 +180,8 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-if (window.location.pathname === '/notes') {
+// need to update
+if (window.location.pathname === temppath) {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
