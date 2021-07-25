@@ -4,11 +4,10 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-let temppath = "/C:/Users/timpr/Desktop/UTBOOTCAMP/note-taker/Develop/public/notes.html";
-let realpath = "/notes";
+let path = "/notes";
 
-// need to update
-if (window.location.pathname === temppath) {
+
+if (window.location.pathname === path) {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -31,7 +30,7 @@ let activeNote = {};
 
 
 const getNotes = () =>
-  fetch('http://localhost:3001/api/notes', { // need to update
+  fetch('/notes', { 
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -39,7 +38,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch('http://localhost:3001/api/notes', {
+  fetch('/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +47,7 @@ const saveNote = (note) =>
   });
 
 const deleteNote = (id) =>
-  fetch(`http://localhost:3001/api/notes/${id}`, {
+  fetch(`/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -125,8 +124,8 @@ const handleRenderSaveBtn = () => {
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
   
-  // need to update
-  if (window.location.pathname === temppath) {
+
+  if (window.location.pathname === path) {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
 
@@ -171,8 +170,7 @@ const renderNoteList = async (notes) => {
     noteListItems.push(li);
   });
 
-  // need to update
-  if (window.location.pathname === temppath) {
+  if (window.location.pathname === path) {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
@@ -180,8 +178,8 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-// need to update
-if (window.location.pathname === temppath) {
+
+if (window.location.pathname === path) {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
