@@ -1,37 +1,12 @@
 [
   {
-    "title": "Finish this",
-    "text": "Gotta finish this project!",
+    "title": "First note",
+    "text": "This is the first note!",
     "id": 0
   },
   {
-    "title": "Test",
-    "text": "note",
-    "id": 1
-  },
-  {
-    "title": "Test",
-    "text": "note",
-    "id": 1
-  },
-  {
-    "title": "Test",
-    "text": "note",
-    "id": 1
-  },
-  {
-    "title": "Test",
-    "text": "note",
-    "id": 1
-  },
-  {
-    "title": "Test",
-    "text": "note",
-    "id": 1
-  },
-  {
-    "title": "Test",
-    "text": "note",
+    "title": "Second note",
+    "text": "This is the second note!",
     "id": 1
   }
 ]
