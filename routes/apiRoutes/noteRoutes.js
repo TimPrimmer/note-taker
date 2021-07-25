@@ -11,5 +11,16 @@ router.post("/notes", (req, res) => {
   res.json(response);
 });
 
+router.delete('/notes/:id', (req, res) => {
+  let id = parseInt([req.params.id]);
+  if (noteUtils.doesIdExist(id)) {
+    let response = noteUtils.deleteNote(id);
+    res.json(response);
+  }
+  else 
+  {
+    res.status(500).send({ error: "Invalid ID" });
+  }
+});
 
 module.exports = router;

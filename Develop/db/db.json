@@ -1,50 +1,12 @@
 [
   {
-    "title": "Test Title",
-    "text": "Test text"
+    "title": "Finish this",
+    "text": "Gotta finish this project!",
+    "id": 0
   },
   {
-    "title": "Test Title",
-    "text": "Test text"
-  },
-  {
-    "title": "Test Title",
-    "text": "Test text"
-  },
-  {
-    "title": "Test Title",
-    "text": "Test text"
-  },
-  {
-    "title": "Test Title",
-    "text": "Test text"
-  },
-  {
-    "title": "new title",
-    "text": "blah"
-  },
-  {
-    "title": "new title",
-    "text": "blah"
-  },
-  {
-    "title": "new title",
-    "text": "blah"
-  },
-  {
-    "title": "new title",
-    "text": "blah"
-  },
-  {
-    "title": "new title",
-    "text": "blah"
-  },
-  {
-    "title": "new title",
-    "text": "blah"
-  },
-  {
-    "title": "Wazzup",
-    "text": "yeeee"
+    "title": "Test",
+    "text": "note",
+    "id": 1
   }
 ]
