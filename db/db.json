@@ -2,11 +2,11 @@
   {
     "title": "First Note",
     "text": "This is the first note!",
-    "id": 0
+    "id": 1
   },
   {
     "title": "Second Note",
     "text": "This is the second note!",
-    "id": 1
+    "id": 2
   }
 ]
